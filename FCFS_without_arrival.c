@@ -7,11 +7,11 @@ float awt,atat;
 void calculate_all(){
     int i;
     wt[0] = 0; // wait time for first process will be 0
-    tat[0] = bt[0] //Turn around time for first process will be equal to its Brust Time
+    tat[0] = bt[0]; //Turn around time for first process will be equal to its Brust Time
     //calculation starts from second process
     for(i = 1; i<n; i++){ 
-        wt[i] = bt[i-1] + wt[i-1];
-        tat[i] = bt[i] + wt[i];
+        wt[i] = bt[i-1] + wt[i-1]; //calculation for WT
+        tat[i] = bt[i] + wt[i]; // calculation for TAT
         awt = awt + wt[i];
         atat = atat + tat[i];
     }
@@ -25,6 +25,7 @@ void display(){
     for(i = 0; i<n; i++){
         printf("%d\t%d\t%d\t%d\n",p[i],bt[i],wt[i],tat[i]);
     }
+    printf("AWT = %.2f\t ATAT = %.2f\n",awt, atat);
 }
 
 void main(){

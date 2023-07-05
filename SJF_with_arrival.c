@@ -46,14 +46,12 @@ void main(){
     int i;
     printf("Enter the number of processes: ");
     scanf("%d",&n);
-    bt[n] = 0;
+    bt[n] = 999;
     for (i=0; i<n; i++){
         printf("Enter the %d AT and BT: ", i+1);
         scanf("%d%d",(at+i),(bt+i));
         p[i] = i+1;
         rt[i] = bt[i];
-        bt[n] = bt[n] + bt[i];
-        // rt[n] = rt[n]+bt[i];
     }
     calculate();
     display();
